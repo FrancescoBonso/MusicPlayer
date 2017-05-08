@@ -1,0 +1,14 @@
+
+body{
+		background: #f2f0f1 url("minimal.jpg") no-repeat right top;
+		font-size: 22px;
+		font-family: "Courier New","Times New Roman", "Times", "serif";
+		text-align: center;
+
+}
+			
+h4
+{
+	font-size: 32px;
+	font-family: "Courier New";
+}
