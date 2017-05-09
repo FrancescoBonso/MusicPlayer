@@ -14,7 +14,7 @@
  </head>
  <body>
 
-  	<iframe id="canzone">
+  	<div id="canzone">
 		<?php
 		
 			$query = "SELECT distinct titolo, link_youtube, artista, album FROM canzoni";
@@ -22,19 +22,16 @@
 
 			while($row = mysqli_fetch_assoc($result)) {
 			  //print_r($row);
-			  echo "<a href='".$row["link_youtube"]."' onclick='loadLink(this)' >".$row["titolo"]."</a>";
+			  echo "<a link='".$row["link_youtube"]."' onclick='document.getElementById(\"YouTubeFrame\").setAttribute(\"src\", this.getAttribute(\"link\"))' >".$row["titolo"]."</a>";
 			  echo "<br/>";
 			  echo "".$row["artista"]."/".$row["album"]."";
 			  echo "<br/><br/>";
 
 			}
 		?>
-	</iframe>
-
-	<iframe id="YouTubeFrame" src="t.getAttribute('href')"></iframe>
-
-
-
-
+	</div>
+	<div>
+	<iframe width="420" height="315" frameborder="0" allowfullscreen id="YouTubeFrame"></iframe>-->
+ 	</div>
  </body>
 </html>
