@@ -1,4 +1,4 @@
-<?php include "database_setup.php"; 
+<?php include "database_setup.php";
 ?>
 
 <!DOCTYPE html>
@@ -16,18 +16,18 @@
 
     <header>
     	<div>
-      <a href="Spotify.html"><h1>Our Music Player</h1></a>
+      <a href="Spotify.html"><h1>Our Music Player</h1></a> <!--la pagina html?-->
       </div>
 
       <div>
-        <a href='04_checksession.php'><img border='0' alt='Upload' src='icon_edit.png' width='50' height='50' align='right'></a>; 
+        <a href='04_checksession.php'><img border='0' alt='Upload' src='icon_edit.png' width='50' height='50' align='right'></a>;
       </div>
 
     </header>
 
     <aside>
       <br/><br/>
-      <form id="form" action="index.php" method="post">
+      <form id="form" action="search.php" method="post">
       	<input id="barra" type="text" name="cerca" placeholder="Search"><input id="bott" type="image">
       </form>
 
