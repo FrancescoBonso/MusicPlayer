@@ -27,7 +27,7 @@
 
     <aside>
       <br/><br/>
-      <form id="form" action="search.php" method="post">
+      <form id="form" action="search.php" method="get" target="pp">
       	<input id="barra" type="text" name="cerca" placeholder="Search"><input id="bott" type="image">
       </form>
 

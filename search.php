@@ -2,35 +2,37 @@
 
 include "database_setup.php"
 
-$cerca=$_POST["cerca"];
+$cerca=$_GET["cerca"];
 
 
-if(!$conn){
- echo "errore di connessione"; //die ("connection error.mysqli_connect:error()");
-  exit();
-}
-// Controlla le chaivi dal DB
-$query="SELECT * from song WHERE (canzone LIKE '%' . $cerca . '%') OR (album LIKE '%' . $cerca . '%') OR (artista LIKE '%' . $cerca . '%')";
+// Controlla Chiavo tabella
+$query= "SELECT titolo FROM canzoni WHERE $cerca LIKE '%titolo%')";
+$result = mysqli_query($conn, $query);
 
-$ris=mysqli_query($conn, $query);
-if (!$query){
-echo "errore di query1";
+while($row = mysqli_fetch_assoc($result)){
+
+  echo $row;
+  echo "<br/>"
 }
 
-$n=mysqli_num_rows($ris);
+$query1= "SELECT album FROM canzoni WHERE $cerca LIKE '%album%')";
+$result1 = mysqli_query($conn, $query1);
 
-if ($n>0) {
-echo "$ris";
+while($row1 = mysqli_fetch_assoc($result1)){
 
-while ($linea=mysqli_fetch_array($ris)) {
-  echo $linea['canzone']." ".$linea['album']." ".$linea['artista']." ".$linea['durata']." ".$linea['anno'];
- }
+  echo $row1;
+  echo "<br/>"
 }
-else {
- echo "Canzone non trovata";
- }
 
- mysqli_close($conn);
+$query2= "SELECT artista FROM canzoni WHERE $cerca LIKE '%artista%')";
+$result2 = mysqli_query($conn, $query2);
 
+while($row2 = mysqli_fetch_assoc($result2)){
 
- ?>
+  echo $row2;
+  echo "<br/>"
+}
+
+mysql_close();
+
+?>

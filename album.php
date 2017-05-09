@@ -22,12 +22,9 @@ while($row = mysqli_fetch_assoc($result)) {
   echo "</form>";
 
 }
+mysql_close();
 
 ?>
 
 </body>
 </html>
-
-
-
- 
