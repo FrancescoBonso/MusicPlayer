@@ -16,12 +16,18 @@ $result = mysqli_query($conn, $query);
 
 while($row = mysqli_fetch_assoc($result)) {
   //print_r($row);
-  echo $row["album"];
+  echo "<form id="albm">";
+  echo "<a href="link" onclick="document.getElementById('albm').submit()">".$row["album"]."</a>";
   echo "<br/>";
-  
+  echo "</form>";
+
 }
 
 ?>
 
 </body>
 </html>
+
+
+
+ 
