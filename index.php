@@ -4,12 +4,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Artista</title>
+    <title>Artista-Canzoni</title>
   </head>
   <body>
 <?php
 
-$query = "SELECT distinct artista FROM canzoni";
+$sel=$_GET["art"];
+
+$query = "SELECT titolo FROM canzoni WHERE $sel='artista'";
 $result = mysqli_query($conn, $query);
 
 echo "<table>";
@@ -19,9 +21,7 @@ while($row = mysqli_fetch_assoc($result)) {
   //print_r($row);
 	echo "<tr>";
 	echo "<td>";
-  echo "<form id='art' method='get' action='index.php'>";
-  echo "<a href='link' onclick='document.getElementById('art').submit()'>".$row["artista"]."</a>";
-  echo "</form>";
+  echo $result;
 	echo "</td>";
 	echo "<br/>";
 

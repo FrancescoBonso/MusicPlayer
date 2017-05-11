@@ -16,8 +16,8 @@ $result = mysqli_query($conn, $query);
 
 while($row = mysqli_fetch_assoc($result)) {
   //print_r($row);
-  echo "<form id="albm">";
-  echo "<a href="link" onclick="document.getElementById('albm').submit()">".$row["album"]."</a>";
+  echo "<form id='albm'  metod='get' action='index.php' target='pp'>";
+  echo "<a href='link' onclick='document.getElementById('albm').submit()''>".$row["album"]."</a>";
   echo "<br/>";
   echo "</form>";
 
