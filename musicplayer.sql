@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2017 at 09:37 AM
+-- Generation Time: May 14, 2017 at 11:57 PM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -59,19 +59,19 @@ CREATE TABLE `canzoni` (
 --
 
 INSERT INTO `canzoni` (`id`, `titolo`, `artista`, `album`, `link_youtube`) VALUES
-(1, 'Learn to fly', 'Foo Fighters', 'There is nothing left to lose', 'https://www.youtube.com/watch?v=7dwuzqF6huc'),
-(2, 'Aaron', 'Paul Kalkbrenner', 'Berlin Calling', 'https://www.youtube.com/watch?v=p450mjB3mxc'),
-(3, 'Hopeless Wanderer', 'Mumford & Sons', 'Babel', 'https://www.youtube.com/watch?v=rId6PKlDXeU'),
-(4, 'Amsterdam sky', 'Emanuele Fasano', 'La mia ragazza è il piano', 'https://www.youtube.com/watch?v=uf2MiBHPRKc'),
-(5, 'Hooked on a Feeling', 'Blue Swede', 'Hooked on a feeling', 'https://www.youtube.com/watch?v=NrI-UBIB8Jk'),
-(6, 'I will wait', 'Mumford & Sons', 'Babel', 'https://www.youtube.com/watch?v=R5HO-X_fR7o'),
-(7, 'Californication', 'Red Hot Chilli Peppers', 'Californication', 'https://www.youtube.com/watch?v=LV34GMYLXcA'),
-(18, 'Oroscopo', 'Calcutta', 'Oroscopo', 'https://www.youtube.com/watch?v=bJtRONVWC08'),
-(9, 'Mrs.Robinson', 'Simon & Garfunkel', 'Bookends', 'https://www.youtube.com/watch?v=9C1BCAgu2I8'),
-(13, 'Oceans Away', 'A R I Z O N A', 'Oceans Away', 'https://www.youtube.com/watch?v=1MoAdVyuEuU'),
-(19, 'Nuvole bianche', 'Ludovico Einaudi', 'Una mattina', 'https://www.youtube.com/watch?v=fEOJQawykD0'),
-(21, 'Whispers In The Dark', 'Mumford & Sons', 'Babel', 'https://www.youtube.com/watch?v=9aGLGubNUKU'),
-(22, 'Lover Of The Light', 'Mumford & Sons', 'Babel', 'https://www.youtube.com/watch?v=-8eB64pXoGU');
+(1, 'Learn to fly', 'Foo Fighters', 'There is nothing left to lose', 'https://www.youtube.com/embed/7dwuzqF6huc'),
+(2, 'Aaron', 'Paul Kalkbrenner', 'Berlin Calling', 'https://www.youtube.com/embed/p450mjB3mxc'),
+(3, 'Hopeless Wanderer', 'Mumford & Sons', 'Babel', 'https://www.youtube.com/embed/rId6PKlDXeU'),
+(4, 'Amsterdam sky', 'Emanuele Fasano', 'La mia ragazza è il piano', 'https://www.youtube.com/embed/uf2MiBHPRKc'),
+(5, 'Hooked on a Feeling', 'Blue Swede', 'Hooked on a feeling', 'https://www.youtube.com/embed/NrI-UBIB8Jk'),
+(6, 'I will wait', 'Mumford & Sons', 'Babel', 'https://www.youtube.com/embed/R5HO-X_fR7o'),
+(7, 'Californication', 'Red Hot Chilli Peppers', 'Californication', 'https://www.youtube.com/embed/LV34GMYLXcA'),
+(18, 'Oroscopo', 'Calcutta', 'Oroscopo', 'https://www.youtube.com/embed/bJtRONVWC08'),
+(9, 'Mrs.Robinson', 'Simon & Garfunkel', 'Bookends', 'https://www.youtube.com/embed/9C1BCAgu2I8'),
+(13, 'Oceans Away', 'A R I Z O N A', 'Oceans Away', 'https://www.youtube.com/embed/1MoAdVyuEuU'),
+(19, 'Nuvole bianche', 'Ludovico Einaudi', 'Una mattina', 'https://www.youtube.com/embed/fEOJQawykD0'),
+(21, 'Whispers In The Dark', 'Mumford & Sons', 'Babel', 'https://www.youtube.com/embed/9aGLGubNUKU'),
+(22, 'Lover Of The Light', 'Mumford & Sons', 'Babel', 'https://www.youtube.com/embed/-8eB64pXoGU');
 
 --
 -- Indexes for dumped tables
