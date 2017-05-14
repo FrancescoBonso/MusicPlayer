@@ -1,4 +1,5 @@
 <?php include "database_setup.php"; ?>
+
 <script type="javascript">
 	function loadLink(t){
 		document.getElementById('YouTubeFrame').setAttribute('src', t.getAttribute('href'));
@@ -31,7 +32,7 @@
 		?>
 	</div>
 	<div>
-	<iframe width="420" height="315" frameborder="0" allowfullscreen id="YouTubeFrame"></iframe>-->
+	<iframe width="420" height="315" frameborder="0" allowfullscreen id="YouTubeFrame"></iframe>
  	</div>
  </body>
 </html>

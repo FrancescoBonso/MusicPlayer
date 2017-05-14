@@ -26,7 +26,7 @@ session_start();?>
 
   if ($n==1) {
     
-    $_SESSION["user"]= $result["username"];
+    $_SESSION["user"] = $result["username"];
     Header("Location:01_FormGestioneDBcanzoni.php");
     
   }

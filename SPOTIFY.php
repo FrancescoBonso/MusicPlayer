@@ -1,5 +1,4 @@
-<?php include "database_setup.php"; 
-?>
+<?php include "database_setup.php"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +15,7 @@
 
     <header>
     	<div>
-      <a href="Spotify.html"><h1>Our Music Player</h1></a>
+      <a href="SPOTIFY.php"><h1>Our Music Player</h1></a>
       </div>
 
       <div>
@@ -40,7 +39,7 @@
       </div>
     </aside>
 
-    <iframe name="pp" href="brani.php"></iframe>
+    <iframe name="pp" href="brani.php"></iframe>  
 
   </div>
 
