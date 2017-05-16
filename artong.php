@@ -7,35 +7,34 @@
     <title>Artista-Canzoni</title>
   </head>
   <body>
-<?php
+    <?php
 
-$sel=$_GET["art"];
+    $art=$_GET["art"];
 
+    //$con = connect();
+    //$db=mysqli_select_db($con, "MusicPlayer");
 
-$query="SELECT artista FROM canzoni WHERE 'artita'='$sel'";
+    //$query="SELECT 'titolo' FROM canzoni 	WHERE 'titolo'='$cerca'";
+    $query="SELECT titolo FROM canzoni WHERE artista='$art'";
 
-							$risultato=mysqli_query($conn, $query);
-							if (!$risultato) {
-								echo "Errore di query";
-								}
+    $risultato=mysqli_query($conn, $query);
 
-							$brani=mysqli_num_rows($risultato);
-
-							if($brani>0) {
-								echo "<table>";
-
-								while ($linea=mysqli_fetch_array($risultato)) {
-                  echo "<tr>";
-                	echo "<td>";
-                  echo $risultato;
-                	echo "</td>";
-                	echo "<br/>";
-								}
-								echo "</table>";
-							}
-							mysqli_close($conn);
-
-              ?>
+    if ($risultato)
+    {
+    	
+    	while ($linea=mysqli_fetch_assoc($risultato)) {
+        //echo "<tr>";
+      	//echo "<td>";
+        echo $linea["titolo"];
+      	echo "<br>";
+      	//echo "<br/>";
+    	}
+    	//echo "</table>";
+    }
+    else {
+    	echo "errore";
+    }
+    ?>
 
   </body>
 </html>

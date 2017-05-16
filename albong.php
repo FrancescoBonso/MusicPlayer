@@ -9,32 +9,34 @@
   <body>
 <?php
 
-$sel=$_GET["albm"];
+$album=$_GET["albm"];
 
-$query="SELECT album FROM canzoni WHERE 'album'='$sel'";
+//$con = connect();
+//$db=mysqli_select_db($con, "MusicPlayer");
 
-							$risultato=mysqli_query($conn, $query);
-							if (!$risultato) {
-								echo "Errore di query";
-								}
+//$query="SELECT 'titolo' FROM canzoni 	WHERE 'titolo'='$cerca'";
+$query="SELECT titolo FROM canzoni WHERE album='$album'";
 
-							$brani=mysqli_num_rows($risultato);
+$risultato=mysqli_query($conn, $query);
 
-							if($brani>0) {
-								echo "<table>";
-
-								while ($linea=mysqli_fetch_array($risultato)) {
-                  echo "<tr>";
-                	echo "<td>";
-                  echo $risultato;
-                	echo "</td>";
-                	echo "<br/>";
-								}
-								echo "</table>";
-							}
-							mysqli_close($conn);
-
-              ?>
+if ($risultato)
+{
+	echo "sono in if";
+	//echo"$risultato";
+	//echo "<table>";
+	while ($linea=mysqli_fetch_assoc($risultato)) {
+    //echo "<tr>";
+  	//echo "<td>";
+    echo $linea["titolo"];
+  	echo "<br>";
+  	//echo "<br/>";
+	}
+	//echo "</table>";
+}
+else {
+	echo "errore";
+}
+?>
 
   </body>
 </html>
