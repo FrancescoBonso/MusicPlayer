@@ -2,37 +2,29 @@
 
 include "database_setup.php";
 
-$cerca=$_GET["cerca"];
+$cerca=$_POST["cerca"];
 
+//$con = connect();
+//$db=mysqli_select_db($con, "MusicPlayer");
 
-// Controlla Chiavo tabella
-$query= "SELECT titolo FROM canzoni WHERE $cerca LIKE '%titolo%')";
-$result = mysqli_query($conn, $query);
+$query="SELECT 'titolo' FROM canzoni 	WHERE 'titolo'='$cerca'";
+$risultato=mysqli_query($conn, $query);
 
-while($row = mysqli_fetch_assoc($result)){
-
-  echo $row;
-  echo "<br/>";
+if ($risultato)
+{
+	echo "sono in if";
+	//echo"$risultato";
+	//echo "<table>";
+	while ($linea=mysqli_fetch_assoc($risultato)) {
+    //echo "<tr>";
+  	//echo "<td>";
+    echo $linea["titolo"];
+  	echo "<br>";
+  	//echo "<br/>";
+	}
+	//echo "</table>";
 }
-
-$query1= "SELECT album FROM canzoni WHERE $cerca LIKE '%album%')";
-$result1 = mysqli_query($conn, $query1);
-
-while($row1 = mysqli_fetch_assoc($result1)){
-
-  echo $row1;
-  echo "<br/>";
+else {
+	echo "errore";
 }
-
-$query2= "SELECT artista FROM canzoni WHERE $cerca LIKE '%artista%')";
-$result2 = mysqli_query($conn, $query2);
-
-while($row2 = mysqli_fetch_assoc($result2)){
-
-  echo $row2;
-  echo "<br/>";
-}
-
-mysql_close();
-
 ?>

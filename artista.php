@@ -1,4 +1,5 @@
-<?php include "database_setup.php"; ?>
+<?php include "database_setup.php";
+?>
 
 <!DOCTYPE html>
 <html>
@@ -16,19 +17,18 @@ echo "<table>";
 echo "<th>Artisti</th>";
 
 while($row = mysqli_fetch_assoc($result)) {
-  //print_r($row);
-	echo "<tr>";
+  echo "<tr>";
 	echo "<td>";
-  echo "<form id='art' method='get' action='index.php'>";
-  echo "<a href='link' onclick='document.getElementById('art').submit()'>".$row["artista"]."</a>";
-  echo "</form>";
-	echo "</td>";
-	echo "<br/>";
-
+  echo "<a onclick='document.getElementById(\"art\").value = this.innerText; document.getElementById(\"form\").submit()'>".$row["artista"]."</a>";
+  echo "</td>";
+  echo "</tr>";
 }
 echo "</table>";
 
 ?>
-
+    <form method='get' action='artong.php' id="form">
+      <input id="art" type="text" name="art">
+      <input type="submit">
+    </form>
   </body>
 </html>

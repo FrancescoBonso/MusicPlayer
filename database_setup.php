@@ -5,11 +5,12 @@ $password = "";
 $dbname = "MusicPlayer";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+//function connect()
+//{
+  $conn = mysqli_connect("127.0.0.1", "root", "", "MusicPlayer");
 // Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-
-
+  if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+  }
+//}
+?>

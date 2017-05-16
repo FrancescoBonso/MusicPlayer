@@ -14,17 +14,26 @@
 $query = "SELECT distinct album FROM canzoni";
 $result = mysqli_query($conn, $query);
 
-while($row = mysqli_fetch_assoc($result)) {
-  //print_r($row);
-  echo "<form id='albm'  metod='get' action='index.php' target='pp'>";
-  echo "<a href='link' onclick='document.getElementById('albm').submit()''>".$row["album"]."</a>";
-  echo "<br/>";
-  echo "</form>";
+echo "<table>";
+echo "<th>Album</th>";
 
+while($row = mysqli_fetch_assoc($result)) {
+  echo "<tr>";
+	echo "<td>";
+  echo "<a onclick='document.getElementById(\"albm\").value = this.innerText; document.getElementById(\"form\").submit()'>".$row["album"]."</a>";
+  echo "</td>";
+  echo "</tr>";
 }
-mysql_close();
+
+echo "</table>";
+
 
 ?>
+
+<form method='get' action='albong.php' id="form">
+  <input id="albm" type="text" name="albm">
+  <input type="submit">
+</form>
 
 </body>
 </html>
