@@ -7,34 +7,32 @@
     <title>Artista-Canzoni</title>
   </head>
   <body>
+    <div>
+
     <?php
-
+    //prendo il valore in input
     $art=$_GET["art"];
-
-    //$con = connect();
-    //$db=mysqli_select_db($con, "MusicPlayer");
-
-    //$query="SELECT 'titolo' FROM canzoni 	WHERE 'titolo'='$cerca'";
+    //cerco le canzoni dell'artista e le stampo
     $query="SELECT titolo FROM canzoni WHERE artista='$art'";
 
     $risultato=mysqli_query($conn, $query);
 
     if ($risultato)
     {
-    	
+
     	while ($linea=mysqli_fetch_assoc($risultato)) {
-        //echo "<tr>";
-      	//echo "<td>";
+
+      	echo "<div>";
         echo $linea["titolo"];
       	echo "<br>";
-      	//echo "<br/>";
+      	echo "</div>";
     	}
-    	//echo "</table>";
     }
     else {
     	echo "errore";
     }
     ?>
 
+  </div>
   </body>
 </html>

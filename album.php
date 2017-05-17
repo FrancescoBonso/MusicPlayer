@@ -20,6 +20,7 @@ echo "<th>Album</th>";
 while($row = mysqli_fetch_assoc($result)) {
   echo "<tr>";
 	echo "<td>";
+  //onclick, funzione java che mi permette di utilizzare una stringa come input di un form sotto creato
   echo "<a onclick='document.getElementById(\"albm\").value = this.innerText; document.getElementById(\"form\").submit()'>".$row["album"]."</a>";
   echo "</td>";
   echo "</tr>";
