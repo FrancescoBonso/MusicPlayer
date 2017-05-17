@@ -1,4 +1,9 @@
 <?php include "database_setup.php"; ?>
+<script type="javascript">
+	function loadLink(t){
+		document.getElementById('YouTubeFrame').setAttribute('src', t.getAttribute('href'));
+	};
+</script>
 
 <!DOCTYPE html>
 <html>
@@ -13,7 +18,7 @@
     //prendo il valore in input
     $art=$_GET["art"];
     //cerco le canzoni dell'artista e le stampo
-    $query="SELECT titolo FROM canzoni WHERE artista='$art'";
+    $query="SELECT titolo, link_youtube, album FROM canzoni WHERE artista='$art'";
 
     $risultato=mysqli_query($conn, $query);
 
@@ -23,8 +28,9 @@
     	while ($linea=mysqli_fetch_assoc($risultato)) {
 
       	echo "<div>";
-        echo $linea["titolo"];
-      	echo "<br>";
+        echo "<a href='".$linea["link_youtube"]."' onclick='loadLink(this)' >".$linea["titolo"]."</a>";
+        echo "<br/>";
+        echo $linea["album"];
       	echo "</div>";
     	}
     }
@@ -34,5 +40,8 @@
     ?>
 
   </div>
+
+  <iframe id="YouTubeFrame" src="t.getAttribute('href')"></iframe>
+
   </body>
 </html>

@@ -2,6 +2,11 @@
 //prendo in inout il valore del form e creo 3 query differenti per album artisti e titoli coasì da avere 3 sezioni differenti
 $cerca=$_POST["cerca"];
  ?>
+ <script type="javascript">
+ 	function loadLink(t){
+ 		document.getElementById('YouTubeFrame').setAttribute('src', t.getAttribute('href'));
+ 	};
+ </script>
 
 <!DOCTYPE html>
 <html>
@@ -10,15 +15,14 @@ $cerca=$_POST["cerca"];
     <title></title>
   </head>
   <body>
+<div>
 
-  </body>
-</html>
 
 <?php
 
 
 //query titolo, il like '% %' serve per cercare stringhe con lettere prima o dopo dell'input
-$query="SELECT titolo FROM canzoni WHERE (titolo LIKE '%" .$cerca. "%')";
+$query="SELECT titolo, link_youtube FROM canzoni WHERE (titolo LIKE '%" .$cerca. "%')";
 
 $risultato=mysqli_query($conn, $query);
 
@@ -29,7 +33,7 @@ if ($risultato)
 
     echo "<div>";
     echo "<br>";
-    echo $linea["titolo"];
+    echo "<a href='".$linea["link_youtube"]."' onclick='loadLink(this)' >".$linea["titolo"]."</a>";
   	echo "<br>";
 
 	}
@@ -143,6 +147,7 @@ else {
 	echo "errore";
 }
 ?>
+</div>
 
 <form method='get' action='artong.php' id="form">
   <input id="art" type="text" name="art">
@@ -153,6 +158,8 @@ else {
   <input id="albm" type="text" name="albm">
   <input type="submit">
 </form>
+
+<iframe id="YouTubeFrame" src="t.getAttribute('href')"></iframe>
 
 </body>
 </html>
